@@ -39,5 +39,3 @@ jobs:
         git add README.md
         git commit -m "Combine README files" || echo "No changes to commit"
         git push
-
-Version 2 of 2
