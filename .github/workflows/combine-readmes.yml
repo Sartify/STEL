@@ -1,0 +1,43 @@
+name: Combine README Files
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  combine-readmes:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Combine README files
+      run: |
+        # Ensure the main README exists
+        touch README.md
+        
+        # Find the line number where "## 📊 Leaderboard" appears
+        leaderboard_line=$(grep -n "## 📊 Leaderboard" README.md | cut -d: -f1)
+        
+        if [ -n "$leaderboard_line" ]; then
+          # If the line exists, insert the content of SECONDARY_README.md after it
+          sed -i "${leaderboard_line}r SECONDARY_README.md" README.md
+        else
+          # If the line doesn't exist, append the content to the end of README.md
+          echo -e "\n## 📊 Leaderboard" >> README.md
+          cat SECONDARY_README.md >> README.md
+        fi
+
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git commit -m "Combine README files" || echo "No changes to commit"
+        git push
+
+Version 2 of 2
