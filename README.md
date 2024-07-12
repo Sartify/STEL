@@ -9,7 +9,7 @@ Explore our interactive dashboards:
 - [Streamlit Dashboard](https://swahili-llm-leaderboard.streamlit.app/)
 - [Hugging Face Space](https://huggingface.co/spaces/Mollel/swahili-llm-leaderboard)
 
-## Leaderboard
+## 📊 Leaderboard
 
 | Model Name | Publisher| Open? | Basemodel |Average| ARC  | HellaSwag      | MMLU         | TruthfulQA|Winogrande|GSM8K           |
 | ---------- | -------- | ----- | --------- |------ | ---- | -------------- | ------------ | --------- | -------- | -------------- |
@@ -17,7 +17,7 @@ Explore our interactive dashboards:
 
 
 
-## How to Contribute
+## 🤝 How to Contribute
 
 We are always happy to contribute! You can contribute by the following:
 
@@ -30,6 +30,6 @@ We are always happy to contribute! You can contribute by the following:
     - requesting and implementing new features
 
 
-## Sponsorship
+## 🤝 Sponsorship
 
 The benchmark is Swahili-based, and we still need support translating and curating more tasks into Swahili. We welcome sponsorships to help advance this endeavour. Your sponsorship would facilitate this essential translation effort, bridging language barriers and making the benchmark accessible to a broader audience. We're grateful for the dedication shown by our collaborators and aim to extend this impact further with the support of sponsors committed to advancing language technologies."
