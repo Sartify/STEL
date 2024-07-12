@@ -1,12 +1,13 @@
 # 🏆 Swahili Embeddings Text Leaderboard
 
-A joint community effort to create a Swahili central leaderboard for Embeddings. These models are currently evaluated using various Swahili text embeddings. Contributions and corrections are welcome! <br>
-We refer to a model being "open" if it can be locally deployed and used commercially.
+Welcome to the Swahili Embeddings Text Leaderboard! This is a collaborative community project aimed at creating a centralized leaderboard for Swahili text embeddings. The models listed here are evaluated using various Swahili text embeddings. Contributions and corrections are always welcome! We define a model as "open" if it can be locally deployed and used commercially.
 
-## Interactive Dashboard
+## 🌐 Interactive Dashboard
 
-https://swahili-llm-leaderboard.streamlit.app/<br>
-https://huggingface.co/spaces/sartifyllc/swahili-llm-leaderboard
+Explore our interactive dashboards:
+
+- [Streamlit Dashboard](https://swahili-llm-leaderboard.streamlit.app/)
+- [Hugging Face Space](https://huggingface.co/spaces/Mollel/swahili-llm-leaderboard)
 
 ## Leaderboard
 
