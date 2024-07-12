@@ -12,7 +12,7 @@ https://huggingface.co/spaces/Mollel/swahili-llm-leaderboard
 
 | Model Name | Publisher| Open? | Basemodel |Average| ARC  | HellaSwag      | MMLU         | TruthfulQA|Winogrande|GSM8K           |
 | ---------- | -------- | ----- | --------- |------ | ---- | -------------- | ------------ | --------- | -------- | -------------- |
-| [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka)| sartifyllc| Yes|Gemma|61.32|58.96|76.4 |61.02| 52.1|75.61|43.82|
+| [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka)| sartifyllc| Yes|bge-small-en-v1.5|61.32|58.96|76.4 |61.02| 52.1|75.61|43.82|
 
 
 
