@@ -1,0 +1,1 @@
+{"name": "sartifyllc/MultiLinguSwahili-serengeti-E250-nli-matryoshka", "revision": "df7dc43e0b20722b12ab355b27a358e130ee9199", "release_date": null, "languages": [], "n_parameters": null, "memory_usage": null, "max_tokens": null, "embed_dim": null, "license": null, "open_source": null, "similarity_fn_name": null, "framework": ["Sentence Transformers"], "loader": null}

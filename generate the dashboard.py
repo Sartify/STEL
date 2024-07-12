@@ -1,15 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jul 12 20:39:35 2024
-
-@author: mm507t
-"""
-
 import json
 import pandas as pd
 import os
 
-directories = ['MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka', 'MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka']
+# Define the JSONL file path
+jsonl_file_path = 'config.jsonl'
 
 # Define the tasks and corresponding metrics
 tasks_metrics = {
@@ -49,49 +43,59 @@ def read_json(file_path, metric_name, use_train=False):
 
 # Function to extract the base model from the directory name
 def extract_base_model(directory_name):
-    base_model = directory_name.replace("MultiLinguSwahili-", "").replace("-nli-matryoshka", "")
+    try:
+        base_model = directory_name.replace("MultiLinguSwahili-", "").replace("-nli-matryoshka", "")
+    except:
+        base_model = directory_name
+            
     return base_model
 
 # List to hold all data
 all_data = []
 
-# Iterate over each directory
-for directory in directories:
-    base_model = extract_base_model(directory)
+# Read the JSONL file
+with open(jsonl_file_path, 'r') as file:
+    for line in file:
+        try:
+            entry = json.loads(line.strip().replace("'", "\""))
+            directory = entry['name']
+            base_model = extract_base_model(directory)
+            
+            # Initialize the data dictionary for each model
+            data = {
+                "Model Name": [f"[{directory}]({entry['link']})"],
+                "Publisher": [entry['publisher']],
+                "Open?": ["Yes"],
+                "Basemodel": [base_model],
+                "Matryoshka": [entry['matryoshka']],
+                "Dimension": [entry['dimension']],
+            }
+            
+            # Iterate over the files in the directory and calculate scores
+            scores_list = []
+            for filename in os.listdir(directory):
+                if filename.endswith(".json"):
+                    task_name = filename.replace('.json', '')
+                    if task_name in tasks_metrics:
+                        metric_name = tasks_metrics[task_name]
+                        file_path = os.path.join(directory, filename)
+                        use_train = task_name == "SwahiliNewsClassification"
+                        score = read_json(file_path, metric_name, use_train=use_train)
+                        if score is not None:
+                            data[task_name] = [100 * score]
+                            scores_list.append(100 * score)
+            
+            # Calculate the average score
+            if scores_list:
+                average_score = sum(scores_list) / len(scores_list)
+                data["Average"] = [average_score]
+            else:
+                data["Average"] = [None]
     
-    # Initialize the data dictionary for each model
-    data = {
-        "Model Name": [f"[{directory}](https://huggingface.co/sartifyllc/{directory})"],
-        "Publisher": ["sartifyllc"],
-        "Open?": [""],
-        "Basemodel": [base_model],
-        "Matryoshka": [""],
-        "Dimension": [""],
-    }
-    
-    # Iterate over the files in the directory and calculate scores
-    scores_list = []
-    for filename in os.listdir(directory):
-        if filename.endswith(".json"):
-            task_name = filename.replace('.json', '')
-            if task_name in tasks_metrics:
-                metric_name = tasks_metrics[task_name]
-                file_path = os.path.join(directory, filename)
-                use_train = task_name == "SwahiliNewsClassification"
-                score = read_json(file_path, metric_name, use_train=use_train)
-                if score is not None:
-                    data[task_name] = [100 * score]
-                    scores_list.append(100 * score)
-    
-    # Calculate the average score
-    if scores_list:
-        average_score = sum(scores_list) / len(scores_list)
-        data["Average"] = [average_score]
-    else:
-        data["Average"] = [None]
-
-    # Add the data to the list
-    all_data.append(data)
+            # Add the data to the list
+            all_data.append(data)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON: {e} - Line: {line}")
 
 # Combine all data into a single DataFrame
 combined_df = pd.concat([pd.DataFrame(d) for d in all_data], ignore_index=True)
@@ -100,12 +104,15 @@ combined_df = pd.concat([pd.DataFrame(d) for d in all_data], ignore_index=True)
 columns_order = ["Model Name", "Publisher", "Open?", "Basemodel", "Matryoshka", "Dimension", "Average"] + list(tasks_metrics.keys())
 combined_df = combined_df[columns_order]
 
+# Sort the DataFrame by the "Average" column in descending order
+combined_df = combined_df.sort_values(by="Average", ascending=False)
+
 # Display the combined DataFrame
-print(combined_df)
+# print(combined_df)
 
 # Save the combined DataFrame to a Markdown file
-with open("results.md", "w") as f:
+with open("SECONDARY_README.md", "w") as f:
     f.write(combined_df.to_markdown(index=False))
 
 # Optionally, save the combined DataFrame to a CSV file
-combined_df.to_csv("results.csv", index=False)
+# combined_df.to_csv("results.csv", index=False)
