@@ -19,17 +19,23 @@ Explore our interactive dashboards:
 
 ## 🤝 How to Contribute
 
-We are always happy to contribute! You can contribute by the following:
+We welcome and appreciate all contributions! You can help by:
 
-- table work (don't forget the links):
-    - filling in missing entries
-    - adding a new model as a new row to the leaderboard. Please keep the descending order.
-    - adding a new benchmark as a new column in the leaderboard and the benchmark to the benchmarks table. Please keep the descending order.
-- code work:
-    - improving the existing code
-    - requesting and implementing new features
+### Table Work
 
+- Filling in missing entries.
+- New models are added as new rows to the leaderboard (maintaining descending order).
+- Add new benchmarks as new columns in the leaderboard and include them in the benchmarks table (maintaining descending order).
+
+### Code Work
+
+- Improving the existing code.
+- Requesting and implementing new features.
 
 ## 🤝 Sponsorship
 
-The benchmark is Swahili-based, and we still need support translating and curating more tasks into Swahili. We welcome sponsorships to help advance this endeavour. Your sponsorship would facilitate this essential translation effort, bridging language barriers and making the benchmark accessible to a broader audience. We're grateful for the dedication shown by our collaborators and aim to extend this impact further with the support of sponsors committed to advancing language technologies."
+This benchmark is Swahili-based, and we need support translating and curating more tasks into Swahili. Sponsorships are welcome to help advance this endeavour. Your sponsorship will facilitate essential translation efforts, bridge language barriers, and make the benchmark accessible to a broader audience. We are grateful for the dedication shown by our collaborators and aim to extend this impact further with the support of sponsors committed to advancing language technologies.
+
+---
+
+Thank you for being part of this effort to advance Swahili language technologies!
