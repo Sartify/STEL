@@ -1,0 +1,84 @@
+{
+  "dataset_revision": "f17cb5f3ec522ac604601fd09db9fd644ac66ca5",
+  "evaluation_time": 9.875625133514404,
+  "kg_co2_emissions": null,
+  "mteb_version": "1.12.68",
+  "scores": {
+    "test": [
+      {
+        "accuracy": 0.8224609375,
+        "f1": 0.815162572238078,
+        "f1_weighted": 0.8223843928018443,
+        "hf_subset": "default",
+        "languages": [
+          "amh-Ethi",
+          "arq-Arab",
+          "ary-Arab",
+          "hau-Latn",
+          "ibo-Latn",
+          "kin-Latn",
+          "por-Latn",
+          "pcm-Latn",
+          "swa-Latn",
+          "twi-Latn",
+          "tso-Latn",
+          "yor-Latn"
+        ],
+        "main_score": 0.8224609375,
+        "scores_per_experiment": [
+          {
+            "accuracy": 0.8037109375,
+            "f1": 0.7922990337787108,
+            "f1_weighted": 0.8025388488488311
+          },
+          {
+            "accuracy": 0.83349609375,
+            "f1": 0.8263119527887044,
+            "f1_weighted": 0.8338473204534904
+          },
+          {
+            "accuracy": 0.81884765625,
+            "f1": 0.8118668435910347,
+            "f1_weighted": 0.819407997026587
+          },
+          {
+            "accuracy": 0.822265625,
+            "f1": 0.8156156552161663,
+            "f1_weighted": 0.8216287012120467
+          },
+          {
+            "accuracy": 0.83203125,
+            "f1": 0.826154697635498,
+            "f1_weighted": 0.8331561229730985
+          },
+          {
+            "accuracy": 0.81298828125,
+            "f1": 0.8028677723445633,
+            "f1_weighted": 0.8107559081050065
+          },
+          {
+            "accuracy": 0.8232421875,
+            "f1": 0.817308520753092,
+            "f1_weighted": 0.8237814129208682
+          },
+          {
+            "accuracy": 0.82177734375,
+            "f1": 0.8165748713022913,
+            "f1_weighted": 0.8222503080976794
+          },
+          {
+            "accuracy": 0.8212890625,
+            "f1": 0.8156582387027634,
+            "f1_weighted": 0.8224814825685914
+          },
+          {
+            "accuracy": 0.8349609375,
+            "f1": 0.8269681362679565,
+            "f1_weighted": 0.8339958258122447
+          }
+        ]
+      }
+    ]
+  },
+  "task_name": "AfriSentiLangClassification"
+}

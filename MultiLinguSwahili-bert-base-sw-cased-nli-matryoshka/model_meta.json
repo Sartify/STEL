@@ -1,0 +1,1 @@
+{"name": "Mollel/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka", "revision": "5b0763dcb9d65f2652d37fdbd0117d10f1169da6", "release_date": null, "languages": [], "n_parameters": null, "memory_usage": null, "max_tokens": null, "embed_dim": null, "license": null, "open_source": null, "similarity_fn_name": null, "framework": ["Sentence Transformers"], "loader": null}
