@@ -13,8 +13,25 @@ Explore our interactive dashboards:
 
 | Model Name | Publisher| Open? | Basemodel |Matryoshka| Dimension  |   Average  | SwahiliNewsClassification         | TruthfulQA| Winogrande|GSM8K           |
 | ---------- | -------- | ----- | --------- |------ | ---- | -------------- | ------------ | --------- | -------- | -------------- |
-| [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka)| sartifyllc| Yes|bge-small-en-v1.5|Yes|256|76.4 |61.02| 52.1|75.61|43.82|
+| [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka)| sartifyllc| Yes|bge-small-en-v1.5|Yes|256|76.4 |51.23046875| 52.1|75.61|43.82|
 
+
+## 
+```python
+pip install mteb
+pip install sentence-transformers
+import mteb
+from sentence_transformers import SentenceTransformer
+
+model_name = "sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka"
+truncate_dim = 256
+language = "swa"
+
+model = SentenceTransformer(model_name, truncate_dim = truncate_dim)
+tasks = mteb.get_tasks(languages=[language])
+evaluation = mteb.MTEB(tasks=tasks)
+results = evaluation.run(model, output_folder=f"results/{model_name}")
+```
 
 
 ## 🤝 How to Contribute
