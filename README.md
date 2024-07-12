@@ -11,9 +11,9 @@ Explore our interactive dashboards:
 
 ## 📊 Leaderboard
 
-| Model Name | Publisher| Open? | Basemodel |Matryoshka| Dimension  |   Average  | SwahiliNewsClassification         | TruthfulQA| Winogrande|GSM8K           |
+| Model Name | Publisher| Open? | Basemodel |Matryoshka| Dimension  |   Average  | Classification | PairClassification| Reranking |BitextMining| Clustering|
 | ---------- | -------- | ----- | --------- |------ | ---- | -------------- | ------------ | --------- | -------- | -------------- |
-| [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka)| sartifyllc| Yes|bge-small-en-v1.5|Yes|256|76.4 |51.23046875| 52.1|75.61|43.82|
+| [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka)| sartifyllc| Yes|bge-small-en-v1.5|Yes|256|76.4 |51.23046875| 52.1|75.61|43.82|43.82|
 
 
 ## 🧪 Evaluation
