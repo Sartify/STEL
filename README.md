@@ -27,14 +27,36 @@ pip install sentence-transformers
 import mteb
 from sentence_transformers import SentenceTransformer
 
-model_name = "sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka"
-truncate_dim = 256
-language = "swa"
+models = ["sartifyllc/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka", "sartifyllc/MultiLinguSwahili-nomic-embed-text-v1.5-nli-matryoshka", "sartifyllc/MultiLinguSwahili-mxbai-embed-large-v1-nli-matryoshka"]
 
-model = SentenceTransformer(model_name, truncate_dim = truncate_dim)
-tasks = mteb.get_tasks(languages=[language])
-evaluation = mteb.MTEB(tasks=tasks)
-results = evaluation.run(model, output_folder=f"results/{model_name}")
+
+for model_name in models:
+    truncate_dim = 768
+    language = "swa"
+    
+    device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu") # if cuda available
+    # model = SentenceTransformer(model_name, truncate_dim = truncate_dim, device = device, trust_remote_code=True) # if you want to use matryoshka n dimension
+    model = SentenceTransformer(model_name, device = device, trust_remote_code=True)
+    
+    tasks = [
+        mteb.get_task("AfriSentiClassification", languages = ["swa"]),
+        mteb.get_task("AfriSentiLangClassification", languages = ["swa"]),
+        mteb.get_task("MasakhaNEWSClassification", languages = ["swa"]),
+        mteb.get_task("MassiveIntentClassification", languages = ["swa"]),
+        mteb.get_task("MassiveScenarioClassification", languages = ["swa"]),
+        mteb.get_task("SwahiliNewsClassification", languages = ["swa"]),
+        # mteb.get_tasks(task_types=["PairClassification", "Reranking", "BitextMining", "Clustering", "Retrieval"], languages = ["swa"]),
+    ]
+    
+    
+    evaluation = mteb.MTEB(tasks=tasks)
+    results = evaluation.run(model, output_folder=f"{model_name}")
+    
+    # results = evaluation.run(model, output_folder=f"{model_name}")
+    tasks = mteb.get_tasks(task_types=["PairClassification", "Reranking", "BitextMining", "Clustering", "Retrieval"], languages = ["swa"])
+    
+    evaluation = mteb.MTEB(tasks=tasks)
+    results = evaluation.run(model, output_folder=f"{model_name}")
 ```
 
 
