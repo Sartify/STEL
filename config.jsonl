@@ -4,5 +4,3 @@
 {"name": "bert-base-uncased-swahili", "open":"Yes", "dimension": "?", "publisher": "flax-community", "matryoshka": "", "link": "https://huggingface.co/flax-community/bert-base-uncased-swahili"}
 {"name": "bert-base-sw-cased", "open":"Yes", "dimension": "?", "publisher": "Geotrend", "matryoshka": "", "link": "https://huggingface.co/Geotrend/bert-base-sw-cased"}
 {"name": "mxbai-embed-large-v1", "open":"Yes", "dimension": "?", "publisher": "mixedbread-ai", "matryoshka": "", "link": "https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1"}
-
-  
