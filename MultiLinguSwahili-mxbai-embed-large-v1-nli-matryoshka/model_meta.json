@@ -1,0 +1,1 @@
+{"name": "Mollel/MultiLinguSwahili-mxbai-embed-large-v1-nli-matryoshka", "revision": "ff5705914ef58c4d44b1912fc4d1dd58d40221ee", "release_date": null, "languages": [], "n_parameters": null, "memory_usage": null, "max_tokens": null, "embed_dim": null, "license": null, "open_source": null, "similarity_fn_name": null, "framework": ["Sentence Transformers"], "loader": null}
