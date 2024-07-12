@@ -16,7 +16,8 @@ Explore our interactive dashboards:
 | [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka)| sartifyllc| Yes|bge-small-en-v1.5|Yes|256|76.4 |51.23046875| 52.1|75.61|43.82|
 
 
-## 
+## 🧪 Evaluation
+To evaluate a model on the Swahili Embeddings Text Benchmark, you can use the following Python script:
 ```python
 pip install mteb
 pip install sentence-transformers
