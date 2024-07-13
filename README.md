@@ -1,6 +1,8 @@
 # 🏆 Swahili Text Embeddings Leaderboard (STEL)
 
-<img src="files/STEL.jpg" alt="STEL" width="300" height="auto">
+<p align="center">
+    <img src="files/STEL.jpg" alt="STEL" width="300" height="auto">
+</p>
 
 Welcome to the Swahili Embeddings Text Leaderboard! This is a collaborative community project aimed at creating a centralized leaderboard for Swahili text embeddings. The models listed here are evaluated using various Swahili text embeddings. Contributions and corrections are always welcome! We define a model as "open" if it can be locally deployed and used commercially.
 
