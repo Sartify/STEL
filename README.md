@@ -19,25 +19,4 @@ Explore our interactive dashboards:
 | [bert-base-uncased-swahili](https://huggingface.co/flax-community/bert-base-uncased-swahili)                                                     | flax-community | Yes     | bert-base-uncased-swahili |              | ?           |   37.8727 |                   41.123  |                       80.8838 |                     66.0714 |                       48.302  |                         51.9334 |                     64.2236 |            0.400601 |                    18.6071 |                    2.04101 | 58.9762 |            13.807 |             8.103 |
 | [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-serengeti-E250-nli-matryoshka)          | sartifyllc     | Yes     | bge-small-en-v1.5         | Yes          | 256         |   36.3029 |                   35.107  |                       67.3486 |                     54.1597 |                       38.0027 |                         46.8393 |                     51.2305 |            5.01061  |                    21.7986 |                   17.8461  | 62.3059 |            21.521 |            14.465 |
 | [bert-base-sw-cased](https://huggingface.co/Geotrend/bert-base-sw-cased)                                                                         | Geotrend       | Yes     | bert-base-sw-cased        |              | ?           |   33.6552 |                   35.3342 |                       84.3066 |                     62.3109 |                       36.3685 |                         38.7996 |                     57.9199 |            0.396624 |                    12.9566 |                    6.77267 | 55.6602 |            10.077 |             2.959 |
-| [UBC-NLPserengeti-E250](https://huggingface.co/UBC-NLP/serengeti-E250)                                                                           | UCB            | Yes     | UBC-NLPserengeti-E250     |              | ?           |   33.581  |                   44.0374 |                       84.3848 |                     42.1008 |                       37.1957 |                         38.2414 |                     58.1592 |           12.7676   |                    15.7357 |                   14.7948  | 53.3967 |             2.041 |             0.117 | 
-
-## 🤝 How to Contribute
-
-We welcome and appreciate all contributions! You can help by:
-
-### Table Work
-
-- Filling in missing entries.
-- New models are added as new rows to the leaderboard (maintaining descending order).
-- Add new benchmarks as new columns in the leaderboard and include them in the benchmarks table (maintaining descending order).
-
-### Code Work
-
-- Improving the existing code.
-- Requesting and implementing new features.
-
-## 🤝 Sponsorship
-
-This benchmark is Swahili-based, and we need support translating and curating more tasks into Swahili. Sponsorships are welcome to help advance this endeavour. Your sponsorship will facilitate essential translation efforts, bridge language barriers, and make the benchmark accessible to a broader audience. We are grateful for the dedication shown by our collaborators and aim to extend this impact further with the support of sponsors committed to advancing language technologies.
-
----
+| [UBC-NLPserengeti-E250](https://huggingface.co/UBC-NLP/serengeti-E250)                                                                           | UCB            | Yes     | UBC-NLPserengeti-E250     |              | ?           |   33.581  |                   44.0374 |                       84.3848 |                     42.1008 |                       37.1957 |                         38.2414 |                     58.1592 |           12.7676   |                    15.7357 |                   14.7948  | 53.3967 |             2.041 |             0.117 |
