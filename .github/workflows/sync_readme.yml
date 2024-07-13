@@ -1,0 +1,47 @@
+name: Sync README to Hugging Face
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if different
+
+jobs:
+  sync-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Hugging Face Hub
+        run: pip install huggingface-hub
+
+      - name: Sync README
+        env:
+          HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
+        run: |
+          python -c "
+import os
+from huggingface_hub import HfApi
+
+repo_id = 'sartifyllc/Swahili-Text-Embeddings-Leaderboard'
+readme_path = 'README.md'
+
+api = HfApi()
+with open(readme_path, 'r') as file:
+    content = file.read()
+
+api.upload_file(
+    path_or_fileobj=readme_path,
+    path_in_repo='README.md',
+    repo_id=repo_id,
+    repo_type='model',
+    token=os.getenv('HF_API_TOKEN')
+)
+          "
+
