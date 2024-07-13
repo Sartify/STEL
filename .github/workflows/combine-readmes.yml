@@ -1,57 +1,51 @@
 name: Combine README Files
+
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
   workflow_dispatch:
+
 jobs:
   combine-readmes:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+
     - name: Combine README files
       run: |
         # Ensure the main README exists
         touch README.md
         
-        # Create a temporary file
-        touch temp_readme.md
+        # Find the line number where "## 📊 Leaderboard" appears
+        leaderboard_line=$(grep -n "## 📊 Leaderboard" README.md | cut -d: -f1)
         
-        # Flag to indicate if we're in the Leaderboard section
-        in_leaderboard=false
-        
-        # Process README.md line by line
-        while IFS= read -r line; do
-          if [[ "$line" == "## 📊 Leaderboard" ]]; then
-            echo "$line" >> temp_readme.md
-            in_leaderboard=true
-            cat SECONDARY_README.md >> temp_readme.md
-          elif [[ "$line" == "## "* ]] && [ "$in_leaderboard" = true ]; then
-            in_leaderboard=false
-            echo "$line" >> temp_readme.md
-          elif [ "$in_leaderboard" = false ]; then
-            echo "$line" >> temp_readme.md
-          fi
-        done < README.md
-        
-        # If Leaderboard section wasn't found, append it at the end
-        if [ "$in_leaderboard" = false ]; then
-          echo -e "\n## 📊 Leaderboard" >> temp_readme.md
-          cat SECONDARY_README.md >> temp_readme.md
+        if [ -n "$leaderboard_line" ]; then
+          # If the line exists, remove everything after it
+          sed -i "${leaderboard_line},\$d" README.md
+          # Add the Leaderboard header back
+          echo "## 📊 Leaderboard" >> README.md
+          # Append the content of SECONDARY_README.md
+          cat SECONDARY_README.md >> README.md
+        else
+          # If the line doesn't exist, append the Leaderboard header and content to the end of README.md
+          echo -e "\n## 📊 Leaderboard" >> README.md
+          cat SECONDARY_README.md >> README.md
         fi
-        
-        # Replace original README with the updated version
-        mv temp_readme.md README.md
+
     - name: Commit changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add README.md
-        git commit -m "Update Leaderboard section in README" || echo "No changes to commit"
+        git commit -m "Combine README files" || echo "No changes to commit"
         git push
+        
       env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
