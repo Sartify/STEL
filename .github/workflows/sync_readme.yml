@@ -36,7 +36,8 @@ jobs:
           echo '    path_or_fileobj=readme_path,' >> sync_readme.py
           echo '    path_in_repo="README.md",' >> sync_readme.py
           echo '    repo_id=repo_id,' >> sync_readme.py
-          echo '    repo_type="model",' >> sync_readme.py
+          echo '    repo_type="space",' >> sync_readme.py
           echo '    token=os.getenv("HF_API_TOKEN")' >> sync_readme.py
           echo ')' >> sync_readme.py
           python sync_readme.py
+
