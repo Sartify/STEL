@@ -1,8 +1,8 @@
 {"name": "MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka", "open":"Yes", "dimension": "256", "publisher": "sartifyllc", "matryoshka": "Yes", "link": "https://huggingface.co/sartifyllc/MultiLinguSwahili-serengeti-E250-nli-matryoshka"}
 {"name": "MultiLinguSwahili-serengeti-E250-nli-matryoshka", "open":"Yes", "dimension": "768", "publisher": "sartifyllc", "matryoshka": "Yes", "link": "https://huggingface.co/sartifyllc/MultiLinguSwahili-serengeti-E250-nli-matryoshka"}
-{"name": "bert-base-uncased-swahili", "open":"Yes", "dimension": "", "publisher": "flax-community", "matryoshka": "", "link": "https://huggingface.co/flax-community/bert-base-uncased-swahili"}
-{"name": "bert-base-sw-cased", "open":"Yes", "dimension": "", "publisher": "Geotrend", "matryoshka": "", "link": "https://huggingface.co/Geotrend/bert-base-sw-cased"}
-{"name": "mxbai-embed-large-v1", "open":"Yes", "dimension": "", "publisher": "mixedbread-ai", "matryoshka": "", "link": "https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1"}
+{"name": "bert-base-uncased-swahili", "open":"Yes", "dimension": "", "publisher": "flax-community", "matryoshka": "N/A", "link": "https://huggingface.co/flax-community/bert-base-uncased-swahili"}
+{"name": "bert-base-sw-cased", "open":"Yes", "dimension": "N/A", "publisher": "Geotrend", "matryoshka": "N/A", "link": "https://huggingface.co/Geotrend/bert-base-sw-cased"}
+{"name": "mxbai-embed-large-v1", "open":"Yes", "dimension": "N/A", "publisher": "mixedbread-ai", "matryoshka": "N/A", "link": "https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1"}
 {"name": "MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka", "open":"Yes", "dimension": "768", "publisher": "sartifyllc", "matryoshka": "Yes", "link": "https://huggingface.co/sartifyllc/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka"}
 {"name": "MultiLinguSwahili-mxbai-embed-large-v1-nli-matryoshka", "open":"Yes", "dimension": "768", "publisher": "sartifyllc", "matryoshka": "Yes", "link": "https://huggingface.co/sartifyllc/MultiLinguSwahili-mxbai-embed-large-v1-nli-matryoshka"}
-{"name": "UBC-NLPserengeti-E250", "open":"Yes", "dimension": "", "publisher": "UCB", "matryoshka": "", "link": "https://huggingface.co/UBC-NLP/serengeti-E250"}
+{"name": "UBC-NLPserengeti-E250", "open":"Yes", "dimension": "N/A", "publisher": "UCB", "matryoshka": "N/A", "link": "https://huggingface.co/UBC-NLP/serengeti-E250"}
