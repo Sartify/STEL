@@ -5,4 +5,3 @@
 {"name": "mxbai-embed-large-v1", "open":"Yes", "dimension": "?", "publisher": "mixedbread-ai", "matryoshka": "", "link": "https://huggingface.co/mixedbread-ai/mxbai-embed-large-v1"}
 {"name": "MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka", "open":"Yes", "dimension": "768", "publisher": "sartifyllc", "matryoshka": "Yes", "link": "https://huggingface.co/sartifyllc/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka"}
 {"name": "MultiLinguSwahili-mxbai-embed-large-v1-nli-matryoshka", "open":"Yes", "dimension": "768", "publisher": "sartifyllc", "matryoshka": "Yes", "link": "https://huggingface.co/sartifyllc/MultiLinguSwahili-mxbai-embed-large-v1-nli-matryoshka"}
-{"name": "UBC-NLPserengeti-E250", "open":"Yes", "dimension": "?", "publisher": "UCB", "matryoshka": "", "link": "https://huggingface.co/UBC-NLP/serengeti-E250"}
