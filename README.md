@@ -19,48 +19,7 @@ Explore our interactive dashboards:
 | [bert-base-uncased-swahili](https://huggingface.co/flax-community/bert-base-uncased-swahili)                                                     | flax-community | Yes     | bert-base-uncased-swahili |              | ?           |   37.8727 |                   41.123  |                       80.8838 |                     66.0714 |                       48.302  |                         51.9334 |                     64.2236 |            0.400601 |                    18.6071 |                    2.04101 | 58.9762 |            13.807 |             8.103 |
 | [MultiLinguSwahili-bge-small-en-v1.5-nli-matryoshka](https://huggingface.co/sartifyllc/MultiLinguSwahili-serengeti-E250-nli-matryoshka)          | sartifyllc     | Yes     | bge-small-en-v1.5         | Yes          | 256         |   36.3029 |                   35.107  |                       67.3486 |                     54.1597 |                       38.0027 |                         46.8393 |                     51.2305 |            5.01061  |                    21.7986 |                   17.8461  | 62.3059 |            21.521 |            14.465 |
 | [bert-base-sw-cased](https://huggingface.co/Geotrend/bert-base-sw-cased)                                                                         | Geotrend       | Yes     | bert-base-sw-cased        |              | ?           |   33.6552 |                   35.3342 |                       84.3066 |                     62.3109 |                       36.3685 |                         38.7996 |                     57.9199 |            0.396624 |                    12.9566 |                    6.77267 | 55.6602 |            10.077 |             2.959 |
-| [UBC-NLPserengeti-E250](https://huggingface.co/UBC-NLP/serengeti-E250)                                                                           | UCB            | Yes     | UBC-NLPserengeti-E250     |              | ?           |   33.581  |                   44.0374 |                       84.3848 |                     42.1008 |                       37.1957 |                         38.2414 |                     58.1592 |           12.7676   |                    15.7357 |                   14.7948  | 53.3967 |             2.041 |             0.117 |## 🧪 Evaluation
-To evaluate a model on the Swahili Embeddings Text Benchmark, you can use the following Python script:
-```python
-pip install mteb
-pip install sentence-transformers
-import mteb
-from sentence_transformers import SentenceTransformer
-
-models = ["sartifyllc/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka", "sartifyllc/MultiLinguSwahili-nomic-embed-text-v1.5-nli-matryoshka", "sartifyllc/MultiLinguSwahili-mxbai-embed-large-v1-nli-matryoshka"]
-
-
-for model_name in models:
-    truncate_dim = 768
-    language = "swa"
-    
-    device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu") # if cuda available
-    # model = SentenceTransformer(model_name, truncate_dim = truncate_dim, device = device, trust_remote_code=True) # if you want to use matryoshka n dimension
-    model = SentenceTransformer(model_name, device = device, trust_remote_code=True)
-    
-    tasks = [
-        mteb.get_task("AfriSentiClassification", languages = ["swa"]),
-        mteb.get_task("AfriSentiLangClassification", languages = ["swa"]),
-        mteb.get_task("MasakhaNEWSClassification", languages = ["swa"]),
-        mteb.get_task("MassiveIntentClassification", languages = ["swa"]),
-        mteb.get_task("MassiveScenarioClassification", languages = ["swa"]),
-        mteb.get_task("SwahiliNewsClassification", languages = ["swa"]),
-        # mteb.get_tasks(task_types=["PairClassification", "Reranking", "BitextMining", "Clustering", "Retrieval"], languages = ["swa"]),
-    ]
-    
-    
-    evaluation = mteb.MTEB(tasks=tasks)
-    results = evaluation.run(model, output_folder=f"{model_name}")
-    
-    # results = evaluation.run(model, output_folder=f"{model_name}")
-    tasks = mteb.get_tasks(task_types=["PairClassification", "Reranking", "BitextMining", "Clustering", "Retrieval"], languages = ["swa"])
-    
-    evaluation = mteb.MTEB(tasks=tasks)
-    results = evaluation.run(model, output_folder=f"{model_name}")
-```
-
-
-## 🤝 How to Contribute
+| [UBC-NLPserengeti-E250](https://huggingface.co/UBC-NLP/serengeti-E250)                                                                           | UCB            | Yes     | UBC-NLPserengeti-E250     |              | ?           |   33.581  |                   44.0374 |                       84.3848 |                     42.1008 |                       37.1957 |                         38.2414 |                     58.1592 |           12.7676   |                    15.7357 |                   14.7948  | 53.3967 |             2.041 |             0.117 |## 🤝 How to Contribute
 
 We welcome and appreciate all contributions! You can help by:
 
