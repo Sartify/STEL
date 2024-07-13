@@ -1,4 +1,4 @@
-name: Sync README to Hugging Face
+name: Sync README and Image to Hugging Face
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main  # Change this to your default branch if different
 
 jobs:
-  sync-readme:
+  sync-readme-and-image:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,38 +21,46 @@ jobs:
       - name: Install Hugging Face Hub
         run: pip install huggingface-hub
 
-      - name: Sync README
+      - name: Sync README and Image
         env:
           HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
         run: |
-          echo 'import os' > sync_readme.py
-          echo 'from huggingface_hub import HfApi' >> sync_readme.py
-          echo 'repo_id = "sartifyllc/Swahili-Text-Embeddings-Leaderboard"' >> sync_readme.py
-          echo 'readme_path = "README.md"' >> sync_readme.py
-          echo 'metadata = """' >> sync_readme.py
-          echo '---' >> sync_readme.py
-          echo 'title: Swahili Text Embeddings Leaderboard' >> sync_readme.py
-          echo 'emoji: ⚡' >> sync_readme.py
-          echo 'colorFrom: purple' >> sync_readme.py
-          echo 'colorTo: green' >> sync_readme.py
-          echo 'sdk: streamlit' >> sync_readme.py
-          echo 'sdk_version: 1.36.0' >> sync_readme.py
-          echo 'app_file: app.py' >> sync_readme.py
-          echo 'pinned: false' >> sync_readme.py
-          echo 'license: apache-2.0' >> sync_readme.py
-          echo '---' >> sync_readme.py
-          echo '"""' >> sync_readme.py
-          echo 'with open(readme_path, "r") as file:' >> sync_readme.py
-          echo '    content = file.read()' >> sync_readme.py
-          echo 'new_content = metadata + "\\n" + content' >> sync_readme.py
-          echo 'with open(readme_path, "w") as file:' >> sync_readme.py
-          echo '    file.write(new_content)' >> sync_readme.py
-          echo 'api = HfApi()' >> sync_readme.py
-          echo 'api.upload_file(' >> sync_readme.py
-          echo '    path_or_fileobj=readme_path,' >> sync_readme.py
-          echo '    path_in_repo="README.md",' >> sync_readme.py
-          echo '    repo_id=repo_id,' >> sync_readme.py
-          echo '    repo_type="space",' >> sync_readme.py
-          echo '    token=os.getenv("HF_API_TOKEN")' >> sync_readme.py
-          echo ')' >> sync_readme.py
-          python sync_readme.py
+          echo 'import os' > sync_readme_and_image.py
+          echo 'from huggingface_hub import HfApi' >> sync_readme_and_image.py
+          echo 'repo_id = "sartifyllc/Swahili-Text-Embeddings-Leaderboard"' >> sync_readme_and_image.py
+          echo 'readme_path = "README.md"' >> sync_readme_and_image.py
+          echo 'image_path = "files/STEL.jpg"' >> sync_readme_and_image.py
+          echo 'metadata = """' >> sync_readme_and_image.py
+          echo '---' >> sync_readme_and_image.py
+          echo 'title: Swahili Text Embeddings Leaderboard' >> sync_readme_and_image.py
+          echo 'emoji: ⚡' >> sync_readme_and_image.py
+          echo 'colorFrom: purple' >> sync_readme_and_image.py
+          echo 'colorTo: green' >> sync_readme_and_image.py
+          echo 'sdk: streamlit' >> sync_readme_and_image.py
+          echo 'sdk_version: 1.36.0' >> sync_readme_and_image.py
+          echo 'app_file: app.py' >> sync_readme_and_image.py
+          echo 'pinned: false' >> sync_readme_and_image.py
+          echo 'license: apache-2.0' >> sync_readme_and_image.py
+          echo '---' >> sync_readme_and_image.py
+          echo '"""' >> sync_readme_and_image.py
+          echo 'with open(readme_path, "r") as file:' >> sync_readme_and_image.py
+          echo '    content = file.read()' >> sync_readme_and_image.py
+          echo 'new_content = metadata + "\\n" + content' >> sync_readme_and_image.py
+          echo 'with open(readme_path, "w") as file:' >> sync_readme_and_image.py
+          echo '    file.write(new_content)' >> sync_readme_and_image.py
+          echo 'api = HfApi()' >> sync_readme_and_image.py
+          echo 'api.upload_file(' >> sync_readme_and_image.py
+          echo '    path_or_fileobj=readme_path,' >> sync_readme_and_image.py
+          echo '    path_in_repo="README.md",' >> sync_readme_and_image.py
+          echo '    repo_id=repo_id,' >> sync_readme_and_image.py
+          echo '    repo_type="space",' >> sync_readme_and_image.py
+          echo '    token=os.getenv("HF_API_TOKEN")' >> sync_readme_and_image.py
+          echo ')' >> sync_readme_and_image.py
+          echo 'api.upload_file(' >> sync_readme_and_image.py
+          echo '    path_or_fileobj=image_path,' >> sync_readme_and_image.py
+          echo '    path_in_repo="STEL.jpg",' >> sync_readme_and_image.py
+          echo '    repo_id=repo_id,' >> sync_readme_and_image.py
+          echo '    repo_type="space",' >> sync_readme_and_image.py
+          echo '    token=os.getenv("HF_API_TOKEN")' >> sync_readme_and_image.py
+          echo ')' >> sync_readme_and_image.py
+          python sync_readme_and_image.py
