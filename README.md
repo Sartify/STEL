@@ -20,7 +20,7 @@ Welcome to the **Swahili  Text Embeddings Leaderboard (STEL)**! This is a sartif
 Explore our interactive dashboards:
 
 - [Streamlit Dashboard](https://swahili-llm-leaderboard.streamlit.app/)
-- [Hugging Face Space](https://huggingface.co/spaces/Mollel/swahili-llm-leaderboard)
+- [Hugging Face Space](https://huggingface.co/spaces/sartifyllc/Swahili-Text-Embeddings-Leaderboard)
 
 ## 📊 Leaderboard
 | Model Name                                                                                                                                       | Publisher      | Open?   | Basemodel                 | Matryoshka   | Dimension   |   Average |   AfriSentiClassification |   AfriSentiLangClassification |   MasakhaNEWSClassification |   MassiveIntentClassification |   MassiveScenarioClassification |   SwahiliNewsClassification |   NTREXBitextMining |   MasakhaNEWSClusteringP2P |   MasakhaNEWSClusteringS2S |    XNLI |   MIRACLReranking |   MIRACLRetrieval |
