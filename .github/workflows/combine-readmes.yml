@@ -31,11 +31,11 @@ jobs:
           # Add the Leaderboard header back
           echo "## 📊 Leaderboard" >> README.md
           # Append the content of SECONDARY_README.md
-          cat SECONDARY_README.md >> README.md
+          cat files/SECONDARY_README.md >> README.md
         else
           # If the line doesn't exist, append the Leaderboard header and content to the end of README.md
           echo -e "\n## 📊 Leaderboard" >> README.md
-          cat SECONDARY_README.md >> README.md
+          cat files/SECONDARY_README.md >> README.md
         fi
 
     - name: Commit changes

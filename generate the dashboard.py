@@ -112,7 +112,7 @@ combined_df = combined_df.sort_values(by="Average", ascending=False)
 # print(combined_df)
 
 # Save the combined DataFrame to a Markdown file
-with open("SECONDARY_README.md", "w") as f:
+with open("files/SECONDARY_README.md", "w") as f:
     f.write(combined_df.to_markdown(index=False))
     
     
@@ -135,9 +135,9 @@ def combine_markdown_files(file1, file2, output_file, encoding='utf-8'):
         out.write(combined_content)
 
 # Paths to the markdown files
-file1 = 'SECONDARY_README.md'
-file2 = 'THIRD_README.md'
-output_file = 'SECONDARY_README.md'
+file1 = 'files/SECONDARY_README.md'
+file2 = 'files/THIRD_README.md'
+output_file = 'files/SECONDARY_README.md'
 
 # Combine the markdown files
 combine_markdown_files(file1, file2, output_file)
