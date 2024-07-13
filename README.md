@@ -5,7 +5,7 @@
 </p>
 
 
-Welcome to the **Swahili  Text Embeddings Leaderboard (STEL)**! This is a sartify community project aimed at creating a centralized leaderboard for Swahili text embeddings. The models listed here are evaluated using various Swahili text benchmarks. Contributions and corrections are always welcome! We define a model as "open" if it can be locally deployed and used commercially.
+Welcome to the **Swahili  Text Embeddings Leaderboard (STEL)**! This is a Sartify LLC project aimed at creating a centralized leaderboard for Swahili text embeddings. The models listed here are evaluated using various Swahili text datasets available at MTEB benchmarks. Contributions and corrections are always welcome! We define a model as "open" if it can be locally deployed and used commercially.
 
 
 ## Table of Contents
@@ -92,7 +92,7 @@ We welcome and appreciate all contributions! You can help by:
 
 ## 🤝 Sponsorship
 
-This benchmark is Swahili-based, and we need support translating and curating more tasks into Swahili. Sponsorships are welcome to help advance this endeavour. Your sponsorship will facilitate essential translation efforts, bridge language barriers, and make the benchmark accessible to a broader audience. We are grateful for the dedication shown by our collaborators and aim to extend this impact further with the support of sponsors committed to advancing language technologies.
+This Swahili-based benchmark benefits greatly from continued efforts in translating and curating more tasks into Swahili. Contributions and sponsorships are appreciated as they help drive this initiative forward. Your support will enhance translation efforts, bridge language barriers, and make the benchmark more accessible to a broader audience. We extend our heartfelt thanks to *AI4DLab* & *Sartify LLC* for their invaluable support and dedication to advancing language technologies. Together, we can further elevate the impact of this project.
 
 ---
 
