@@ -25,23 +25,18 @@ jobs:
         env:
           HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
         run: |
-          python -c "
-import os
-from huggingface_hub import HfApi
-
-repo_id = 'sartifyllc/Swahili-Text-Embeddings-Leaderboard'
-readme_path = 'README.md'
-
-api = HfApi()
-with open(readme_path, 'r') as file:
-    content = file.read()
-
-api.upload_file(
-    path_or_fileobj=readme_path,
-    path_in_repo='README.md',
-    repo_id=repo_id,
-    repo_type='model',
-    token=os.getenv('HF_API_TOKEN')
-)
-          "
-
+          echo 'import os' > sync_readme.py
+          echo 'from huggingface_hub import HfApi' >> sync_readme.py
+          echo 'repo_id = "sartifyllc/Swahili-Text-Embeddings-Leaderboard"' >> sync_readme.py
+          echo 'readme_path = "README.md"' >> sync_readme.py
+          echo 'api = HfApi()' >> sync_readme.py
+          echo 'with open(readme_path, "r") as file:' >> sync_readme.py
+          echo '    content = file.read()' >> sync_readme.py
+          echo 'api.upload_file(' >> sync_readme.py
+          echo '    path_or_fileobj=readme_path,' >> sync_readme.py
+          echo '    path_in_repo="README.md",' >> sync_readme.py
+          echo '    repo_id=repo_id,' >> sync_readme.py
+          echo '    repo_type="model",' >> sync_readme.py
+          echo '    token=os.getenv("HF_API_TOKEN")' >> sync_readme.py
+          echo ')' >> sync_readme.py
+          python sync_readme.py
