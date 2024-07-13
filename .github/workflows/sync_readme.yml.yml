@@ -44,6 +44,4 @@ api.upload_file(
     token=os.getenv('HF_API_TOKEN')
 )
           "
-      env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
