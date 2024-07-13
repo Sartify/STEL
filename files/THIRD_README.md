@@ -6,8 +6,9 @@ pip install sentence-transformers
 import mteb
 from sentence_transformers import SentenceTransformer
 
-models = ["sartifyllc/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka"]
-
+model_name = "MultiLinguSwahili-serengeti-E250-nli-matryoshka"	
+publisher = "sartifyllc"
+models = ["sartifyllc/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka", f"{publisher}/{model_name}"]
 
 for model_name in models:
     truncate_dim = 768
