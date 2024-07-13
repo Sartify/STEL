@@ -26,10 +26,14 @@ jobs:
         leaderboard_line=$(grep -n "## 📊 Leaderboard" README.md | cut -d: -f1)
         
         if [ -n "$leaderboard_line" ]; then
-          # If the line exists, insert the content of SECONDARY_README.md after it
-          sed -i "${leaderboard_line}r SECONDARY_README.md" README.md
+          # If the line exists, remove everything after it
+          sed -i "${leaderboard_line},\$d" README.md
+          # Add the Leaderboard header back
+          echo "## 📊 Leaderboard" >> README.md
+          # Append the content of SECONDARY_README.md
+          cat SECONDARY_README.md >> README.md
         else
-          # If the line doesn't exist, append the content to the end of README.md
+          # If the line doesn't exist, append the Leaderboard header and content to the end of README.md
           echo -e "\n## 📊 Leaderboard" >> README.md
           cat SECONDARY_README.md >> README.md
         fi
