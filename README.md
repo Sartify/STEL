@@ -6,6 +6,13 @@
 
 Welcome to the Swahili Embeddings Text Leaderboard! This is a collaborative community project aimed at creating a centralized leaderboard for Swahili text embeddings. The models listed here are evaluated using various Swahili text embeddings. Contributions and corrections are always welcome! We define a model as "open" if it can be locally deployed and used commercially.
 
+## Table of Contents
+- [Interactive Dashboard](#-interactive-dashboard)
+- [Leaderboard](#-leaderboard)
+- [Evaluation](#-evaluation)
+- [How to Contribute](#-how-to-contribute)
+- [Sponsorship](#-sponsorship)
+
 ## 🌐 Interactive Dashboard
 
 Explore our interactive dashboards:
