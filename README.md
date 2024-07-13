@@ -28,7 +28,7 @@ pip install sentence-transformers
 import mteb
 from sentence_transformers import SentenceTransformer
 
-models = ["sartifyllc/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka", "sartifyllc/MultiLinguSwahili-nomic-embed-text-v1.5-nli-matryoshka", "sartifyllc/MultiLinguSwahili-mxbai-embed-large-v1-nli-matryoshka"]
+models = ["sartifyllc/MultiLinguSwahili-bert-base-sw-cased-nli-matryoshka"]
 
 
 for model_name in models:
@@ -42,6 +42,7 @@ for model_name in models:
     tasks = [
         mteb.get_task("AfriSentiClassification", languages = ["swa"]),
         mteb.get_task("AfriSentiLangClassification", languages = ["swa"]),
+        # "LanguageClassification": "accuracy",
         mteb.get_task("MasakhaNEWSClassification", languages = ["swa"]),
         mteb.get_task("MassiveIntentClassification", languages = ["swa"]),
         mteb.get_task("MassiveScenarioClassification", languages = ["swa"]),
