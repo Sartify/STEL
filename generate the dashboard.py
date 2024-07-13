@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 # Define the JSONL file path
-jsonl_file_path = 'config.jsonl'
+jsonl_file_path = 'models/config.jsonl'
 
 # Define the tasks and corresponding metrics
 tasks_metrics = {
@@ -73,6 +73,7 @@ with open(jsonl_file_path, 'r') as file:
             
             # Iterate over the files in the directory and calculate scores
             scores_list = []
+            directory = 'models/'+directory
             for filename in os.listdir(directory):
                 if filename.endswith(".json"):
                     task_name = filename.replace('.json', '')
