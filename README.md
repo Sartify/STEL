@@ -19,7 +19,6 @@ Welcome to the **Swahili Text Embeddings Leaderboard (STEL)**! This is a **Sarti
 
 Explore our interactive dashboards:
 
-- [Streamlit Dashboard](https://swahili-llm-leaderboard.streamlit.app/)
 - [Hugging Face Space](https://huggingface.co/spaces/sartifyllc/Swahili-Text-Embeddings-Leaderboard)
 
 ## 📊 Leaderboard
