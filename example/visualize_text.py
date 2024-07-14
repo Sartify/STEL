@@ -92,7 +92,7 @@ HTML_TEMPLATE = '''
 
 # Load and preprocess data
 data = pd.read_csv("data.csv")
-# data = data.head(1000)
+data = data.head(1000)
 column_name = 'content'
 data = data.dropna(subset=[column_name])
 data = data.drop_duplicates(subset=[column_name])
