@@ -1,7 +1,7 @@
 # 🏆 Swahili Text Embeddings Leaderboard (STEL)
 
 <p align="center">
-    <img src="files/STEL.jpg" alt="STEL" width="300" height="auto">
+    <img src="files/STEL.gif" alt="STEL" width="300" height="auto">
 </p>
 
 
