@@ -56,9 +56,11 @@ jobs:
           echo '    repo_type="space",' >> sync_readme_and_image.py
           echo '    token=os.getenv("HF_API_TOKEN")' >> sync_readme_and_image.py
           echo ')' >> sync_readme_and_image.py
+          echo 'with open(readme_path, "a") as file:' >> sync_readme_and_image.py
+          echo '    file.write("\\n<center>\\n  <img src=\'files/STEL.gif\' alt=\'STEL\' />\\n</center>")' >> sync_readme_and_image.py
           echo 'api.upload_file(' >> sync_readme_and_image.py
           echo '    path_or_fileobj=image_path,' >> sync_readme_and_image.py
-          echo '    path_in_repo="STEL.jpg",' >> sync_readme_and_image.py
+          echo '    path_in_repo="files/STEL.gif",' >> sync_readme_and_image.py
           echo '    repo_id=repo_id,' >> sync_readme_and_image.py
           echo '    repo_type="space",' >> sync_readme_and_image.py
           echo '    token=os.getenv("HF_API_TOKEN")' >> sync_readme_and_image.py
