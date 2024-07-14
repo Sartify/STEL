@@ -29,7 +29,7 @@ jobs:
           echo 'from huggingface_hub import HfApi' >> sync_readme_and_image.py
           echo 'repo_id = "sartifyllc/Swahili-Text-Embeddings-Leaderboard"' >> sync_readme_and_image.py
           echo 'readme_path = "README.md"' >> sync_readme_and_image.py
-          echo 'image_path = "files/STEL.jpg"' >> sync_readme_and_image.py
+          echo 'image_path = "files/STEL.gif"' >> sync_readme_and_image.py
           echo 'metadata = """' >> sync_readme_and_image.py
           echo '---' >> sync_readme_and_image.py
           echo 'title: Swahili Text Embeddings Leaderboard' >> sync_readme_and_image.py
